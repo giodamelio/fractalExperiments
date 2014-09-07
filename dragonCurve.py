@@ -7,26 +7,22 @@ window = turtle.Screen()
 window.screensize(10000, 10000)
 
 # Make our screen draw faster
-window.delay(1)
+window.tracer(32, 1)
 
 # Create our turtle
 dragon = turtle.Turtle()
-
-# Make our turtle fast
-dragon.speed("fastest")
 
 # Hide our turtle
 dragon.hideturtle()
 
 # Draw our dragon
-for n in range(1, 1000):
-    # Move forward 50
-    dragon.forward(10)
-
+for n in range(1, 5000):
     # Determine weather we should turn right or left
     if (((n & -n) << 1) & n) != 0:
+        dragon.forward(5)
         dragon.left(90)
     else:
+        dragon.forward(10)
         dragon.right(90)
 
 # Wait for the user to click to exit
